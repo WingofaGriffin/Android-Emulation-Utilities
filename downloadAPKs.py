@@ -10,13 +10,16 @@ githubAPKs = {
 }
 
 gplayAPKs = {
-    "melonds": "",
-    "PPSSPP": "",
-    "dolphin": "",
+    "daijisho": "com.magneticchen.daijishou",
+    "dolphin": "org.dolphinemu.dolphinemu",
+    "duckstation": "com.github.stenzek.duckstation",
+    "melonds": "me.magnum.melonds",
+    "PPSSPP": "org.ppsspp.ppsspp",
 }
 
 if not os.path.exists("apks"):
     os.mkdir("apks")
 
 for e in githubAPKs:
-    print(helperfunctions.getLatestGithubURL(githubAPKs[e]))
+    latestRelease=helperfunctions.getLatestGithubURL(githubAPKs[e])
+    helperfunctions.downloadAPK(latestRelease["browser_download_url"], f"{e}.apk")
