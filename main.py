@@ -19,8 +19,7 @@ if not os.path.exists("apks"):
 
 # Check if APKs have already been downloaded
 if os.listdir('apks'):
-    redownload = input("APKs folder is not empty, would you like to redownload? y/n\n
-    ")
+    redownload = input("APKs folder is not empty, would you like to redownload? y/n\n")
     if redownload != "n":
         # Download APKs
         try:
@@ -40,6 +39,4 @@ for apk in os.listdir("apks"):
 downloadAPKs.installPlayStore(d)
 
 # Copy the folder structure over
-helperfunctions.archiveEmulationFolder()
-d.sync.push("Emulation.zip", "/storage/sdcard0/")
-d.shell("unzip /storage/sdcard0/archive.zip")
+os.system("adb push Emulation.zip /storage/emulated/0")

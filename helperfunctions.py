@@ -27,6 +27,3 @@ def openPlayStoreApp(id, device):
     shellcmd=f"am start -a android.intent.action.VIEW -d 'market://details?id={id}'"
     device.shell(shellcmd)
     input("Press Enter to continue...")
-
-def archiveEmulationFolder():
-    shutil.make_archive("Emulation", 'zip', "Emulation")
