@@ -20,8 +20,8 @@ def patchNether():
     helperfunctions.downloadAPK(aetherSX2dl, "aethersx2.apk")
 
     # Patch with bundled xdelta3 binary
-    os.system("./xdelta3 -d -f -s apks/15210-v1.5-4248.apk apks/nethersx2.xdelta apks/nethersx2.apk")
+    os.system("./xdelta3 -d -f -s apks/aethersx2.apk apks/nethersx2.xdelta apks/nethersx2.apk")
     # Cleanup files
     os.remove("apks/nethersx2.xdelta")
-    os.remove("apks/15210-v1.5-4248.apk")
+    os.remove("apks/aethersx2.apk")
     

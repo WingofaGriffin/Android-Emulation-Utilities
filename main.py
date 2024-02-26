@@ -32,6 +32,7 @@ else:
 if not os.path.exists("apks"):
     os.mkdir("apks")
 
+# Download APKs
 try:
     downloadAPKs.downloadAPKs()
     nethersx2patch.patchNether()
@@ -40,3 +41,6 @@ except:
     quit()
 else:
     print("APKs downloaded locally.")
+
+for apk in os.path("apks"):
+    response = device.shell(f'adb install ')
