@@ -8,6 +8,9 @@ aetherSX2dl='https://www.aethersx2.com/archive/android/alpha/15210-v1.5-4248.apk
 response = requests.get(netherSX2repo)
 netherSX2patch=response.json()[0]["assets"][3]["browser_download_url"]
 
+if not os.path.exists("apks"):
+    os.mkdir("apks")
+
 urlretrieve(netherSX2patch, "apks/nethersx2.xdelta")
 
 target = requests.get(aetherSX2dl) # making requests to server
