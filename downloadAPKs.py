@@ -1,6 +1,7 @@
 import requests
 import os
 import helperfunctions
+import adbutils
 
 githubAPKs = {
     "obtanium": "https://api.github.com/repos/ImranR98/Obtainium/releases",
@@ -28,3 +29,7 @@ def downloadAPKs():
         
     for e in otherAPKs:
         helperfunctions.downloadAPK(otherAPKs[e], f"{e}.apk")
+
+def installPlayStore(device):
+    for app in gplayAPKs:
+        openPlayStoreApp(gplayAPKs[app], device)

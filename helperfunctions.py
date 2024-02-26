@@ -1,5 +1,6 @@
 import requests
 import shutil
+import os
 from tqdm.auto import tqdm
 
 # Helper function to get latest APK from Github
@@ -20,3 +21,7 @@ def downloadAPK(url, name):
             # save the output to a file
             with open(f"apks/{name}", 'wb')as output:
                 shutil.copyfileobj(raw, output)
+
+def openPlayStoreApp(id, device):
+    shellcmd=f"am start -a adroid.intent.action.VIEW -d 'market://details?id={id}' -p com.android.vending;"
+    device.shell(shellcmd)

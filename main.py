@@ -1,33 +1,18 @@
-from adb_shell.adb_device import AdbDeviceTcp, AdbDeviceUsb
-from adb_shell.auth.sign_pythonrsa import PythonRSASigner
 import os
+import adbutils
 
 import nethersx2patch
 import downloadAPKs
+import helperfunctions
 
-# Load the public and private keys
-try:
-    # for *nix devices
-    adbkey = f'{os.getenv('HOME')}/.android/adbkey'
-    with open(adbkey) as f:
-        priv = f.read()
-    with open(adbkey + '.pub') as f:
-        pub = f.read()
-    signer = PythonRSASigner(pub, priv)
-except:
-    print("adbkeys not found. Have you connected an Android device to this computer?")
-    quit()
+# Initialize adb
+adb = adbutils.AdbClient(host="127.0.0.1", port=5037)
+for info in adb.list():
+    print(info.serial, info.state)
 
-# Connect via USB (package must be installed via `pip install adb-shell[usb])`
-print("Attempting to connect to Android device over USB...")
-try:
-    device = AdbDeviceUsb()
-    device.connect(rsa_keys=[signer], auth_timeout_s=0.1):
-except:
-    print("Device connection over USB failed. Ensure access has been granted on your device.")
-    quit()
-else:
-    print("Device connected successfully!")
+# You do not need to offer serial if only one device connected
+# RuntimeError will be raised if multi device connected
+d = adb.device()
 
 if not os.path.exists("apks"):
     os.mkdir("apks")
@@ -42,5 +27,12 @@ except:
 else:
     print("APKs downloaded locally.")
 
-for apk in os.path("apks"):
-    response = device.shell(f'adb install ')
+# Install apks
+for apk in os.listdir("apks"):
+    if apk.endswith(".apk"):
+        d.install(f"apks/{apk}")
+
+installPlayStore(d)
+
+# Copy the folder structure over
+d.sync.push("Emulation", "/storage/sdcard0/")
