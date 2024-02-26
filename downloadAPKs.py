@@ -9,6 +9,10 @@ githubAPKs = {
     "vita3k": "https://api.github.com/repos/Vita3K/Vita3K-Android/releases",
 }
 
+otherAPKs = {
+    "retroarch": "https://buildbot.libretro.com/nightly/android/RetroArch.apk",
+}
+
 gplayAPKs = {
     "daijisho": "com.magneticchen.daijishou",
     "dolphin": "org.dolphinemu.dolphinemu",
@@ -17,9 +21,10 @@ gplayAPKs = {
     "PPSSPP": "org.ppsspp.ppsspp",
 }
 
-if not os.path.exists("apks"):
-    os.mkdir("apks")
-
-for e in githubAPKs:
-    latestRelease=helperfunctions.getLatestGithubURL(githubAPKs[e])
-    helperfunctions.downloadAPK(latestRelease["browser_download_url"], f"{e}.apk")
+def downloadAPKs():
+    for e in githubAPKs:
+        latestRelease=helperfunctions.getLatestGithubURL(githubAPKs[e])
+        helperfunctions.downloadAPK(latestRelease["browser_download_url"], f"{e}.apk")
+        
+    for e in otherAPKs:
+        helperfunctions.downloadAPK(otherAPKs[e], f"{e}.apk")

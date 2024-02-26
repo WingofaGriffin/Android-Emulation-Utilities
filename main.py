@@ -2,6 +2,9 @@ from adb_shell.adb_device import AdbDeviceTcp, AdbDeviceUsb
 from adb_shell.auth.sign_pythonrsa import PythonRSASigner
 import os
 
+import nethersx2patch
+import downloadAPKs
+
 # Load the public and private keys
 try:
     # for *nix devices
@@ -26,4 +29,14 @@ except:
 else:
     print("Device connected successfully!")
 
+if not os.path.exists("apks"):
+    os.mkdir("apks")
 
+try:
+    downloadAPKs.downloadAPKs()
+    nethersx2patch.patchNether()
+except:
+    print("APK downloads failed. Check your internet connection and try again.")
+    quit()
+else:
+    print("APKs downloaded locally.")
