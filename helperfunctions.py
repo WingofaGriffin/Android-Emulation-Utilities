@@ -23,5 +23,10 @@ def downloadAPK(url, name):
                 shutil.copyfileobj(raw, output)
 
 def openPlayStoreApp(id, device):
-    shellcmd=f"am start -a adroid.intent.action.VIEW -d 'market://details?id={id}' -p com.android.vending;"
+    print(f"Navigating Play Store to {id}. Please install manually and press enter to continue when done.")
+    shellcmd=f"am start -a android.intent.action.VIEW -d 'market://details?id={id}'"
     device.shell(shellcmd)
+    input("Press Enter to continue...")
+
+def archiveEmulationFolder():
+    shutil.make_archive("Emulation", 'zip', "Emulation")

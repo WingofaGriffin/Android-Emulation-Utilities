@@ -32,4 +32,4 @@ def downloadAPKs():
 
 def installPlayStore(device):
     for app in gplayAPKs:
-        openPlayStoreApp(gplayAPKs[app], device)
+        helperfunctions.openPlayStoreApp(gplayAPKs[app], device)

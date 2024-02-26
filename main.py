@@ -17,22 +17,29 @@ d = adb.device()
 if not os.path.exists("apks"):
     os.mkdir("apks")
 
-# Download APKs
-try:
-    downloadAPKs.downloadAPKs()
-    nethersx2patch.patchNether()
-except:
-    print("APK downloads failed. Check your internet connection and try again.")
-    quit()
-else:
-    print("APKs downloaded locally.")
+# Check if APKs have already been downloaded
+if os.listdir('apks'):
+    redownload = input("APKs folder is not empty, would you like to redownload? y/n\n
+    ")
+    if redownload != "n":
+        # Download APKs
+        try:
+            downloadAPKs.downloadAPKs()
+            nethersx2patch.patchNether()
+        except:
+            print("APK downloads failed. Check your internet connection and try again.")
+            quit()
+        else:
+            print("APKs downloaded locally.")
 
 # Install apks
 for apk in os.listdir("apks"):
     if apk.endswith(".apk"):
         d.install(f"apks/{apk}")
 
-installPlayStore(d)
+downloadAPKs.installPlayStore(d)
 
 # Copy the folder structure over
-d.sync.push("Emulation", "/storage/sdcard0/")
+helperfunctions.archiveEmulationFolder()
+d.sync.push("Emulation.zip", "/storage/sdcard0/")
+d.shell("unzip /storage/sdcard0/archive.zip")
