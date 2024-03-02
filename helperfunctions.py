@@ -4,8 +4,8 @@ import os
 from tqdm.auto import tqdm
 
 # Helper function to get latest APK from Github
-def getLatestGithubURL(url):
-    response = requests.get(url)
+def getLatestGithubURL(repo):
+    response = requests.get(f"https://api.github.com/repos/{repo}/releases/")
     for i in response.json()[0]["assets"]:
         if i["name"].endswith(".apk"):
             return i

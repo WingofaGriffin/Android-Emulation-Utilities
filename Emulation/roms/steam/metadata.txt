@@ -1,6 +1,0 @@
-collection: Valve Steam
-shortname: steam
-extensions: desktop, sh
-launch:  {file.path}
-
-

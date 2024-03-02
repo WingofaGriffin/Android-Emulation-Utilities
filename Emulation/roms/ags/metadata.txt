@@ -1,6 +1,0 @@
-collection: Adventure Game Studio Game Engine
-shortname: ags
-extensions: desktop
-launch: PLACEHOLDER {file.path}
-
-

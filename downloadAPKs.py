@@ -4,10 +4,11 @@ import helperfunctions
 import adbutils
 
 githubAPKs = {
-    "obtanium": "https://api.github.com/repos/ImranR98/Obtainium/releases",
-    "citra": "https://api.github.com/repos/citra-emu/citra-nightly/releases",
-    "yuzu": "https://api.github.com/repos/yuzu-emu/yuzu-android/releases",
-    "vita3k": "https://api.github.com/repos/Vita3K/Vita3K-Android/releases",
+    "obtanium": "ImranR98/Obtainium",
+    "citra": "citra-emu/citra-nightly",
+    "yuzu": "yuzu-emu/yuzu-android",
+    "vita3k": "Vita3K/Vita3K-Android",
+    "melonds": "rafaelvcaetano/melonDS-android"
 }
 
 otherAPKs = {
