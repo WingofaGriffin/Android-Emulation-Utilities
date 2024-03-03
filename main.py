@@ -63,10 +63,7 @@ downloadAPKs.installPlayStore(d)
 os.system("adb push Emulation /storage/emulated/0")
 
 # Copy obtainium json to downloads to be uploaded
-d.sync.push("obtainium-config.json", "/storage/emulated/0/Downloads/obtainium-config.json")
 print(f"Opening browser to Obtainium config downloader. Please add the Obtainium configs for the desired applications.")
-print(f"Alternatively, import the file 'obtainium-config.json' that has been downloaded to the /Downloads/ folder.")
-shellcmd=f"am start -a android.intent.action.VIEW -d https://wingofagriffin.github.io/Emudroid-Installer/"
 d.shell(shellcmd)
 print("Press Enter to continue...")
 input()
