@@ -1,1 +1,0 @@
-# Emudroid-Installer
