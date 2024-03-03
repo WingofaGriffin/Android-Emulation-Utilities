@@ -1,4 +1,4 @@
-# Emudroid-Installer
+# Android Emulation Utilities
 
 A simple to use python script to install popular emulators on your Android device.
 

@@ -19,6 +19,8 @@ class Logger(object):
 
 sys.stdout = Logger("emudroid-installer.log")
 
+print("Welcome to Android Emulation Utilities! Please wait for further instructions.")
+
 # Ensure adb is installed
 try:
     os.system("adb version")
