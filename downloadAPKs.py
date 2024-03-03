@@ -8,7 +8,7 @@ githubAPKs = {
     "citra": "citra-emu/citra-nightly",
     "yuzu": "yuzu-emu/yuzu-android",
     "vita3k": "Vita3K/Vita3K-Android",
-    "melonds": "rafaelvcaetano/melonDS-android"
+    "melonds": "rafaelvcaetano/melonDS-android",
 }
 
 otherAPKs = {
@@ -19,7 +19,6 @@ gplayAPKs = {
     "daijisho": "com.magneticchen.daijishou",
     "dolphin": "org.dolphinemu.dolphinemu",
     "duckstation": "com.github.stenzek.duckstation",
-    "melonds": "me.magnum.melonds",
     "PPSSPP": "org.ppsspp.ppsspp",
 }
 

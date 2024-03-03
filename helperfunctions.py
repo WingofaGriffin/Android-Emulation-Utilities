@@ -5,7 +5,8 @@ from tqdm.auto import tqdm
 
 # Helper function to get latest APK from Github
 def getLatestGithubURL(repo):
-    response = requests.get(f"https://api.github.com/repos/{repo}/releases/")
+    url=f"https://api.github.com/repos/{repo}/releases"
+    response = requests.get(url)
     for i in response.json()[0]["assets"]:
         if i["name"].endswith(".apk"):
             return i
@@ -26,4 +27,5 @@ def openPlayStoreApp(id, device):
     print(f"Navigating Play Store to {id}. Please install manually and press enter to continue when done.")
     shellcmd=f"am start -a android.intent.action.VIEW -d 'market://details?id={id}'"
     device.shell(shellcmd)
-    input("Press Enter to continue...")
+    print("Press Enter to continue...")
+    input()

@@ -1,9 +1,23 @@
 import os
 import adbutils
-
+import sys
 import nethersx2patch
 import downloadAPKs
 import helperfunctions
+
+class Logger(object):
+    def __init__(self, filename="Default.log"):
+        self.terminal = sys.stdout
+        self.log = open(filename, "a")
+
+    def write(self, message):
+        # if message and not message.isspace():
+        self.terminal.write(f"{message}")
+        self.log.write(f"{message}")
+    
+    def flush(self): pass
+
+sys.stdout = Logger("emudroid-installer.log")
 
 # Ensure adb is installed
 try:
@@ -49,4 +63,10 @@ downloadAPKs.installPlayStore(d)
 os.system("adb push Emulation /storage/emulated/0")
 
 # Copy obtainium json to downloads to be uploaded
-d.sync.push("obtainium-emus.json", "/storage/emulated/0/Downloads/obtainium-emus.json")
+d.sync.push("obtainium-config.json", "/storage/emulated/0/Downloads/obtainium-config.json")
+print(f"Opening browser to Obtainium config downloader. Please add the Obtainium configs for the desired applications.")
+print(f"Alternatively, import the file 'obtainium-config.json' that has been downloaded to the /Downloads/ folder.")
+shellcmd=f"am start -a android.intent.action.VIEW -d obtainium-apps.html'"
+d.shell(shellcmd)
+print("Press Enter to continue...")
+input()
