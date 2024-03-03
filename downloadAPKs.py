@@ -21,12 +21,12 @@ gplayAPKs = {
     "daijisho": "com.magneticchen.daijishou",
     "dolphin": "org.dolphinemu.dolphinemu",
     "duckstation": "com.github.stenzek.duckstation",
-    "PPSSPP": "org.ppsspp.ppsspp",
-    "Snes9x EX+": "com.explusalpha.Snes9xPlus",
-    "Yaba Sanshiro": "org.devmiyax.yabasanshioro2",
-    "M64Plus FZ": "org.mupen64plusae.v3.fzurita",
-    "Redream": "io.recompiled.redream",
-
+    "ppsspp": "org.ppsspp.ppsspp",
+    "snes9xex": "com.explusalpha.Snes9xPlus",
+    "yabasanshiro": "org.devmiyax.yabasanshioro2",
+    "m64plusfz": "org.mupen64plusae.v3.fzurita",
+    "redream": "io.recompiled.redream",
+    "scummvm"L "org.scummvm.scummvm",
 }
 
 def downloadAPKs():
