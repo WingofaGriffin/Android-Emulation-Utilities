@@ -31,7 +31,7 @@ jobs:
         pip install -r requirements.txt
         pip install pyinstaller
     - name: Build package
-      run: pyinstaller -F --additional-hooks-dir=./pyinstaller main.py
+      run: pyinstaller -F --additional-hooks-dir=./pyinstaller -n=AndroidEmulationUtilities main.py
     - name: Upload artifact (Windows)
       uses: actions/upload-artifact@v4
       if: runner.os == 'windows'
