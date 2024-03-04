@@ -3,8 +3,7 @@ import nethersx2patch
 
 githubAPKs = {
     "obtanium": "ImranR98/Obtainium",
-    "citra": "citra-emu/citra-nightly",
-    "yuzu": "yuzu-emu/yuzu-android",
+    "citrammj": "weihuoya/citra",
     "vita3k": "Vita3K/Vita3K-Android",
     "melonds": "rafaelvcaetano/melonDS-android",
     "flycast": "flyinghead/flycast",

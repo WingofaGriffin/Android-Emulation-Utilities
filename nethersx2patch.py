@@ -1,6 +1,7 @@
 import requests
 import os
 import helperfunctions
+import tempdir
 
 netherSX2repo='https://api.github.com/repos/Trixarian/NetherSX2-patch/releases'
 aetherSX2dl='https://www.aethersx2.com/archive/android/alpha/15210-v1.5-4248.apk'
@@ -22,7 +23,7 @@ def patchNether():
     try:
         os.system("./xdelta3 -d -f -s apks/aethersx2.apk apks/nethersx2.xdelta apks/nethersx2.apk")
         # Cleanup files
-        os.remove("apks/nethersx2.xdelta")
+        os.remove(os.path.join(tempfile.gettempdir(), "AndroidEmulationUtilities", "apks", "nethersx2.xdelta"))
         os.remove("apks/aethersx2.apk")
     except Exception as ex:
         template = "An exception of type {0} occurred. Arguments:\n{1!r}"
