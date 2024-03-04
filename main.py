@@ -35,7 +35,11 @@ for info in adb.list():
 
 # You do not need to offer serial if only one device connected
 # RuntimeError will be raised if multi device connected
-d = adb.device()
+try:
+    d = adb.device()
+except:
+    print("Android device not found. Please ensure your Android device is connected to this system and is properly in debug mode: https://developer.android.com/tools/adb#Enabling")
+    exit()
 
 if not os.path.exists("apks"):
     os.mkdir("apks")

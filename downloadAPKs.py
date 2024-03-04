@@ -26,7 +26,7 @@ gplayAPKs = {
     "yabasanshiro": "org.devmiyax.yabasanshioro2",
     "m64plusfz": "org.mupen64plusae.v3.fzurita",
     "redream": "io.recompiled.redream",
-    "scummvm"L "org.scummvm.scummvm",
+    "scummvm": "org.scummvm.scummvm",
 }
 
 def downloadAPKs():
