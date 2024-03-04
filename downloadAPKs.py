@@ -1,7 +1,4 @@
-import requests
-import os
 import helperfunctions
-import adbutils
 import nethersx2patch
 
 githubAPKs = {

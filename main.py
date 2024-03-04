@@ -2,7 +2,6 @@ import os
 import adbutils
 import sys
 import downloadAPKs
-import helperfunctions
 
 class Logger(object):
     def __init__(self, filename="Default.log"):
@@ -63,7 +62,7 @@ os.system("adb push Emulation /storage/emulated/0")
 
 # Copy obtainium json to downloads to be uploaded
 print(f"Opening browser to Obtainium config downloader. Please add the Obtainium configs for the desired applications.")
-shellcmd=f"am start -a android.intent.action.VIEW -d https://wingofagriffin.github.io/Android-Emulation-Utilities/"
+shellcmd="am start -a android.intent.action.VIEW -d https://wingofagriffin.github.io/Android-Emulation-Utilities/"
 d.shell(shellcmd)
 print("Press Enter to continue...")
 input()
