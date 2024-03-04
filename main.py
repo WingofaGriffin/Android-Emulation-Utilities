@@ -22,8 +22,11 @@ print("Welcome to Android Emulation Utilities! Please wait for further instructi
 # Ensure adb is installed
 try:
     os.system("adb version")
-except:
-    print("adb not installed. Please install it before running this program: https://developer.android.com/tools/releases/platform-tools#downloads")
+except Exception as ex:
+    template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+    message = template.format(type(ex).__name__, ex.args)
+    print(message)
+    print("adb is likely not installed. Please install it before running this program: https://developer.android.com/tools/releases/platform-tools#downloads")
     exit()
 
 # Initialize adb
@@ -35,8 +38,11 @@ for info in adb.list():
 # RuntimeError will be raised if multi device connected
 try:
     d = adb.device()
-except:
-    print("Android device not found. Please ensure your Android device is connected to this system and is properly in debug mode: https://developer.android.com/tools/adb#Enabling")
+except Exception as ex:
+    template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+    message = template.format(type(ex).__name__, ex.args)
+    print(message)
+    print("Android device likely not found. Please ensure your Android device is connected to this system and is properly in debug mode: https://developer.android.com/tools/adb#Enabling")
     exit()
 
 if not os.path.exists("apks"):
@@ -61,7 +67,7 @@ downloadAPKs.installPlayStore(d)
 os.system("adb push Emulation /storage/emulated/0")
 
 # Copy obtainium json to downloads to be uploaded
-print(f"Opening browser to Obtainium config downloader. Please add the Obtainium configs for the desired applications.")
+print("Opening browser to Obtainium config downloader. Please add the Obtainium configs for the desired applications.")
 shellcmd="am start -a android.intent.action.VIEW -d https://wingofagriffin.github.io/Android-Emulation-Utilities/"
 d.shell(shellcmd)
 print("Press Enter to continue...")

@@ -1,6 +1,5 @@
 import requests
 import os
-from urllib.request import urlretrieve
 import helperfunctions
 
 netherSX2repo='https://api.github.com/repos/Trixarian/NetherSX2-patch/releases'
@@ -20,8 +19,13 @@ def patchNether():
     helperfunctions.downloadAPK(aetherSX2dl, "aethersx2.apk")
 
     # Patch with bundled xdelta3 binary
-    os.system("./xdelta3 -d -f -s apks/aethersx2.apk apks/nethersx2.xdelta apks/nethersx2.apk")
-    # Cleanup files
-    os.remove("apks/nethersx2.xdelta")
-    os.remove("apks/aethersx2.apk")
-    
+    try:
+        os.system("./xdelta3 -d -f -s apks/aethersx2.apk apks/nethersx2.xdelta apks/nethersx2.apk")
+        # Cleanup files
+        os.remove("apks/nethersx2.xdelta")
+        os.remove("apks/aethersx2.apk")
+    except Exception as ex:
+        template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+        message = template.format(type(ex).__name__, ex.args)
+        print(message)
+        print("xdelta patch failed. Report a bug in GitHub with the log.")
