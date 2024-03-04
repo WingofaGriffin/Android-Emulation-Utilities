@@ -1,1 +1,0 @@
-hiddenimports = ['downloadAPKs', 'nethersx2patch', 'helperfunctions']
