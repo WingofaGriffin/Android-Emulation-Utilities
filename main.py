@@ -1,7 +1,6 @@
 import os
 import adbutils
 import sys
-import nethersx2patch
 import downloadAPKs
 import helperfunctions
 
@@ -48,15 +47,9 @@ if not os.path.exists("apks"):
 if os.listdir('apks'):
     redownload = input("APKs folder is not empty, would you like to redownload? y/n\n")
     if redownload != "n":
-        # Download APKs
-        try:
-            downloadAPKs.downloadAPKs()
-            nethersx2patch.patchNether()
-        except:
-            print("APK downloads failed. Check your internet connection and try again.")
-            quit()
-        else:
-            print("APKs downloaded locally.")
+        downloadAPKs.downloadScript()
+else:
+    downloadAPKs.downloadScript()
 
 # Install apks
 for apk in os.listdir("apks"):
@@ -70,6 +63,7 @@ os.system("adb push Emulation /storage/emulated/0")
 
 # Copy obtainium json to downloads to be uploaded
 print(f"Opening browser to Obtainium config downloader. Please add the Obtainium configs for the desired applications.")
+shellcmd=f"am start -a android.intent.action.VIEW -d https://wingofagriffin.github.io/Android-Emulation-Utilities/"
 d.shell(shellcmd)
 print("Press Enter to continue...")
 input()

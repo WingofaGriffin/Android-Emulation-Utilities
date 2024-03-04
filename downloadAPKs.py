@@ -2,6 +2,7 @@ import requests
 import os
 import helperfunctions
 import adbutils
+import nethersx2patch
 
 githubAPKs = {
     "obtanium": "ImranR98/Obtainium",
@@ -30,13 +31,28 @@ gplayAPKs = {
 }
 
 def downloadAPKs():
-    for e in githubAPKs:
-        latestRelease=helperfunctions.getLatestGithubURL(githubAPKs[e])
-        helperfunctions.downloadAPK(latestRelease["browser_download_url"], f"{e}.apk")
-        
+    # Install Retroarch First
     for e in otherAPKs:
+        print("Installing Retroarch...")
         helperfunctions.downloadAPK(otherAPKs[e], f"{e}.apk")
+
+    for e in githubAPKs:
+        print(f"Would you like to install {e}? y/n (default yes)")
+        install = input()
+        if install != "n":
+            latestRelease=helperfunctions.getLatestGithubURL(githubAPKs[e])
+            helperfunctions.downloadAPK(latestRelease["browser_download_url"], f"{e}.apk")
 
 def installPlayStore(device):
     for app in gplayAPKs:
         helperfunctions.openPlayStoreApp(gplayAPKs[app], device)
+
+def downloadScript():
+    try:
+        downloadAPKs()
+        nethersx2patch.patchNether()
+    except:
+        print("APK downloads failed. Check your internet connection and try again.")
+        quit()
+    else:
+        print("APKs downloaded locally.")
