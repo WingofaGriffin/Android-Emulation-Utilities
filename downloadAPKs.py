@@ -3,11 +3,12 @@ import nethersx2patch
 
 githubAPKs = {
     "obtanium": "ImranR98/Obtainium",
-    "citrammj": "weihuoya/citra",
+    "citra": "PabloMK7/citra",
     "vita3k": "Vita3K/Vita3K-Android",
     "melonds": "rafaelvcaetano/melonDS-android",
     "flycast": "flyinghead/flycast",
     "skyemu": "skylersaleh/SkyEmu",
+    "sudachi": "sudachi-emu/sudachi",
 }
 
 otherAPKs = {

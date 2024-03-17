@@ -1,10 +1,10 @@
 import requests
 import os
 import helperfunctions
-import tempdir
+import sys
 
 netherSX2repo='https://api.github.com/repos/Trixarian/NetherSX2-patch/releases'
-aetherSX2dl='https://www.aethersx2.com/archive/android/alpha/15210-v1.5-4248.apk'
+aetherSX2dl='https://github.com/Trixarian/NetherSX2-patch/releases/download/0.0/15210-v1.5-4248.apk'
 
 def patchNether():
     # Get the latest patch from github
@@ -20,11 +20,19 @@ def patchNether():
     helperfunctions.downloadAPK(aetherSX2dl, "aethersx2.apk")
 
     # Patch with bundled xdelta3 binary
+    if sys.platform == "linux" or sys.platform == "darwin":
+        # Ensure xdelta is executable
+        os.system("chmod +x ./Utilities/xdelta3")
+        patchcmd="./Utilities/xdelta3 -d -f -s apks/aethersx2.apk apks/nethersx2.xdelta apks/nethersx2.apk"
+    elif system.platform == "win32":
+        # To be tested on pc...
+        patchcmd="Utilities\\xdelta.exe -d -f -s apks\\aethersx2.apk apks\\nethersx2.xdelta apks\\nethersx2.apk"
     try:
-        os.system("./xdelta3 -d -f -s apks/aethersx2.apk apks/nethersx2.xdelta apks/nethersx2.apk")
+        os.system(patchcmd)
         # Cleanup files
-        os.remove(os.path.join(tempfile.gettempdir(), "AndroidEmulationUtilities", "apks", "nethersx2.xdelta"))
-        os.remove("apks/aethersx2.apk")
+        # os.remove(os.path.join(tempfile.gettempdir(), "AndroidEmulationUtilities", "apks", "nethersx2.xdelta"))
+        os.remove(os.path.join("apks", "nethersx2.xdelta"))
+        os.remove(os.path.join("apks", "aethersx2.apk"))
     except Exception as ex:
         template = "An exception of type {0} occurred. Arguments:\n{1!r}"
         message = template.format(type(ex).__name__, ex.args)
