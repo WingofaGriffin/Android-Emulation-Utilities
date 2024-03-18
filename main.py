@@ -50,7 +50,7 @@ if not os.path.exists("apks"):
 
 # Check if APKs have already been downloaded
 if os.listdir('apks'):
-    redownload = input("APKs folder is not empty, would you like to redownload? y/n\n")
+    redownload = input("APKs folder is not empty, would you like to redownload? (NOTE: Every APK in this folder will be installed) y/n (default: y)\n")
     if redownload != "n":
         downloadAPKs.downloadScript()
 else:
