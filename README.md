@@ -46,7 +46,6 @@ On Windows, open Command Prompt and run something along the following:
 cd "$HOME\Downloads"
 git clone "https://github.com/WingofaGriffin/Android-Emulation-Utilities.git"
 cd "Android-Emulation-Utilities"
-Android-Emulation-Utilities
 py -m pip install -r requirements.txt
 py main.py
 ```
