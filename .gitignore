@@ -29,3 +29,5 @@ Temporary Items
 venv/
 build/
 dist/
+__pycache__/
+Emulation
