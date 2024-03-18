@@ -17,6 +17,16 @@ class Logger(object):
 
 sys.stdout = Logger("emudroid-installer.log")
 
+# Check for updates
+versionNumber=0.1
+currentVersion=versionNumber #TO BE ADDED
+if versionNumber != currentVersion:
+    print("There is a newer version of Android Emulation Utilities available.")
+    print("Please navigate to https://github.com/WingofaGriffin/Android-Emulation-Utilities/releases/latest")
+    continue = input("Continue anyway? y/n (default: y)")
+    if continue == "n":
+        quit()
+
 print("Welcome to Android Emulation Utilities! Please wait for further instructions.")
 
 # Ensure adb is installed
