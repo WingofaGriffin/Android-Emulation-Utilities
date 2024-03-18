@@ -24,4 +24,14 @@ This is designed to be as unopinionated of an installation script as possible. T
 
 ## "Installation"
 
-This is not an app that is designed to be installed on your device. Instead, I suggest downloading this project to a temporary location on your computer ()
+This is not an app that is designed to be installed on your device. Instead, I suggest downloading this project to a temporary location on your computer (such as the Downloads folder). You can either directly download this git directory, or grab the zip from the [releases folder](https://github.com/WingofaGriffin/Android-Emulation-Utilities/releases/latest).
+
+## Usage
+
+Install all python dependencies with pip, then run `main.py` in python. For most users, this will look like the following:
+
+```sh
+cd Android-Emulation-Utilities
+pip install -r requirements.txt
+python main.py
+```
