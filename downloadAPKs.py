@@ -2,13 +2,13 @@ import helperfunctions
 import nethersx2patch
 
 githubAPKs = {
-    "obtanium (REQUIRED)": "ImranR98/Obtainium",
-    "citra (3DS)": "PabloMK7/citra",
-    "vita3k (Vita)": "Vita3K/Vita3K-Android",
-    "melonds (NDS)": "rafaelvcaetano/melonDS-android",
-    "flycast (Dreamcast)": "flyinghead/flycast",
-    "skyemu (GB/GBC/GBA)": "skylersaleh/SkyEmu",
-    "sudachi (Switch)": "sudachi-emu/sudachi",
+    "obtanium": "ImranR98/Obtainium",
+    "citra": "PabloMK7/citra",
+    "vita3k": "Vita3K/Vita3K-Android",
+    "melonds": "rafaelvcaetano/melonDS-android",
+    "flycast": "flyinghead/flycast",
+    "skyemu": "skylersaleh/SkyEmu",
+    "sudachi": "sudachi-emu/sudachi",
 }
 
 otherAPKs = {
@@ -16,14 +16,14 @@ otherAPKs = {
 }
 
 gplayAPKs = {
-    "daijisho (RECOMMENDED Frontend)": "com.magneticchen.daijishou",
-    "dolphin (Gamecube and Wii)": "org.dolphinemu.dolphinemu",
-    "duckstation (PS1)": "com.github.stenzek.duckstation",
-    "ppsspp (PSP)": "org.ppsspp.ppsspp",
-    "snes9xex (SNES)": "com.explusalpha.Snes9xPlus",
-    "yabasanshiro (Saturn)": "org.devmiyax.yabasanshioro2",
-    "m64plusfz (N64)": "org.mupen64plusae.v3.fzurita",
-    "redream (Dreamcast)": "io.recompiled.redream",
+    "daijisho": "com.magneticchen.daijishou",
+    "dolphin": "org.dolphinemu.dolphinemu",
+    "duckstation": "com.github.stenzek.duckstation",
+    "ppsspp": "org.ppsspp.ppsspp",
+    "snes9xex": "com.explusalpha.Snes9xPlus",
+    "yabasanshiro": "org.devmiyax.yabasanshioro2",
+    "m64plusfz": "org.mupen64plusae.v3.fzurita",
+    "redream": "io.recompiled.redream",
     "scummvm": "org.scummvm.scummvm",
 }
 
@@ -34,11 +34,12 @@ def downloadAPKs():
         helperfunctions.downloadAPK(otherAPKs[e], f"{e}.apk")
 
     for e in githubAPKs:
-        print(f"Would you like to install {e}? y/n (default yes)")
-        install = input()
-        if install != "n":
-            latestRelease=helperfunctions.getLatestGithubURL(githubAPKs[e])
-            helperfunctions.downloadAPK(latestRelease["browser_download_url"], f"{e}.apk")
+        if e != "obtanium":
+            print(f"Would you like to install {e}? y/n (default yes)")
+            install = input()
+            if install != "n":
+                latestRelease=helperfunctions.getLatestGithubURL(githubAPKs[e])
+                helperfunctions.downloadAPK(latestRelease["browser_download_url"], f"{e}.apk")
 
 def installPlayStore(device):
     for app in gplayAPKs:
