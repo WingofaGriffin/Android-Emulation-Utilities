@@ -1,0 +1,8 @@
+# Summary
+
+- [Home](./index.md)
+
+# Tool Guides
+- [Obtainium Configs](./obtainium.md)
+- [Retroarch Guide](./retroarch.md)
+- [Daijisho Guide](./daijisho.md)

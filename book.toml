@@ -1,0 +1,11 @@
+[book]
+authors = ["WingofaGriffin"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Emudroid Installer Wiki"
+
+[output.html]
+site-url = "/Android-Emulation-Utilities/"
+git-repository-url = "https://github.com/WingofaGriffin/Android-Emulation-Utilities"
+edit-url-template = "https://github.com/WingofaGriffin/Android-Emulation-Utilities/edit/pages/{path}"
