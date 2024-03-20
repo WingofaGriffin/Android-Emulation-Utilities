@@ -9,12 +9,15 @@ RetroArch on Android requires manual post-install steps to work. Here are some s
 ### MS DOS:
 - DOSBox-Pure
 
-MSX:
+### MSX:
 - blueMSX
 
-NEC PC Engine: 
+### NEC PC Engine: 
 - Beetle PCE Fast
-    <li>Nintendo DS: melonDS DS (Note the extra "DS")</li>
+
+### Nintendo DS: 
+- melonDS DS (Note the extra "DS")
+
     <li>Nintendo Game Boy / Color: SameBoy (Gambatte and GearBoy are solid too)</li>
     <li>Nintendo Game Boy Advance: mGBA</li>
     <li>Nintendo Entertainment System: Mesen or Nestopia</li>
