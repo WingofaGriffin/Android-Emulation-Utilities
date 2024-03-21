@@ -9,3 +9,7 @@ title = "Emudroid Installer Wiki"
 site-url = "/Android-Emulation-Utilities/"
 git-repository-url = "https://github.com/WingofaGriffin/Android-Emulation-Utilities"
 edit-url-template = "https://github.com/WingofaGriffin/Android-Emulation-Utilities/edit/pages/{path}"
+no-section-label = true
+
+[output.html.print]
+enable = false
