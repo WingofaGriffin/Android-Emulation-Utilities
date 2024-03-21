@@ -8,3 +8,4 @@
 - [Obtainium Configs](./obtainium.md)
 - [Retroarch Guide](./retroarch.md)
 - [RetroAchievements](./retroachievements.md)
+- [Custom Drivers](./drivers.md)
