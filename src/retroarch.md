@@ -2,6 +2,8 @@
 
 RetroArch on Android requires manual post-install steps to work. Here are some suggestions on our end.
 
+Please follow [this guide](https://docs.libretro.com/guides/download-cores/) to install cores for RetroArch.
+
 Note: Only use cores labeled "Lower End" if you are experiencing poor emulation speed from the other options suggested.
 
 ## Arcade:

@@ -6,4 +6,4 @@ Android Emulation Utilities is a tool used to easily install Android Emulation a
 
 You can see the [GitHub Project](https://github.com/WingofaGriffin/Android-Emulation-Utilities/) for more information, or download the [latest release](https://github.com/WingofaGriffin/Android-Emulation-Utilities/releases/latest).
 
-Please look at the sidebar to navigate.
+Please look at the sidebar to navigate this wiki.

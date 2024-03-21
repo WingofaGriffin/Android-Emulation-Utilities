@@ -4,6 +4,7 @@
 - [Installation](./installation.md)
 
 # Tool Guides
+- [Daijisho Guide](./daijisho.md)
 - [Obtainium Configs](./obtainium.md)
 - [Retroarch Guide](./retroarch.md)
-- [Daijisho Guide](./daijisho.md)
+- [RetroAchievements](./retroachievements.md)
