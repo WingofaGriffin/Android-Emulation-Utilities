@@ -23,6 +23,8 @@ This will **NOT** run on Android devices directly. You must connect it to a PC f
 
 This is designed to be as unopinionated of an installation script as possible. There are no assumptions to settings for optimizing performance for your device, nor controls for those of you installing this on a gaming handheld. I assume you will want to customize those controls to your own desire based on how diverse and different the options on the market are from one another. As such, this has not been tested on any specific devices unless otherwise noted.
 
+USE AT YOUR OWN RISK! While this script is fully open source and is easily reviewable, there is always a risk of your device not behaving as expected, especially with the large number of Android devices that are all configured slightly differently. I cannot guarantee your specific device is compatible.
+
 ## "Installation" and Usage
 
 This is not an app that is designed to be installed on your device. Instead, I suggest downloading this project to a temporary location on your computer (such as the Downloads folder). You can either directly download this git directory, or grab the zip from the [releases folder](https://github.com/WingofaGriffin/Android-Emulation-Utilities/releases/latest).
