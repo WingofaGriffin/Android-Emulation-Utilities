@@ -1,6 +1,7 @@
 # Summary
 
 - [Home](./index.md)
+- [Installation](./installation.md)
 
 # Tool Guides
 - [Obtainium Configs](./obtainium.md)
