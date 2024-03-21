@@ -78,7 +78,7 @@ os.system("adb push Emulation /storage/emulated/0")
 
 # Copy obtainium json to downloads to be uploaded
 print("Opening browser to Obtainium config downloader. Please add the Obtainium configs for the desired applications.")
-shellcmd="am start -a android.intent.action.VIEW -d https://wingofagriffin.github.io/Android-Emulation-Utilities/"
+shellcmd="am start -a android.intent.action.VIEW -d https://wingofagriffin.github.io/Android-Emulation-Utilities/obtainium.html"
 d.shell(shellcmd)
 print("Press Enter to continue...")
 input()
