@@ -51,3 +51,13 @@ cd "Android-Emulation-Utilities"
 py -m pip install -r requirements.txt
 py main.py
 ```
+
+## TODO and Future Additions
+
+- Add a GUI (PySide?) and Installer
+- RetroAchievements baked in
+- More config optimizations for emulators
+    - Setting up Save and Bios folders
+- Test on gaming handhelds
+- Test on Windows
+- Better streamlined setup
