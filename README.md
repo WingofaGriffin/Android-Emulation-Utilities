@@ -52,10 +52,15 @@ py main.py
 
 ## TODO and Future Additions
 
-- Add a GUI (PySide?) and Installer
+- Add a GUI
 - RetroAchievements baked in
 - More config optimizations for emulators
     - Setting up Save and Bios folders
 - Test on gaming handhelds
 - Test on Windows
 - Better streamlined setup
+
+## Special Thanks
+
+- DragoonDoirse and the EmuDeck team
+- https://github.com/RJNY/Obtainium-Emulation-Pack

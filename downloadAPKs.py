@@ -25,6 +25,13 @@ gplayAPKs = {
     "m64plusfz": "org.mupen64plusae.v3.fzurita",
     "redream": "io.recompiled.redream",
     "scummvm": "org.scummvm.scummvm",
+    "moonlight": "com.limelight",
+    "chiaki": "com.gameblabla.chiaki",
+    "steamlink": "com.valvesoftware.steamlink",
+    "xbox": "com.microsoft.xboxone.smartglass",
+    "gamepass": "com.gamepass",
+    "geforcenow": "com.nvidia.geforcenow",
+    "psremoteplay": "com.playstation.remoteplay",
 }
 
 def downloadAPKs():
