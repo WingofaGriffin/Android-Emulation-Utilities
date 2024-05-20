@@ -24,6 +24,11 @@ func DownloadAPK(filename string, url string) {
 	io.Copy(io.MultiWriter(f, bar), resp.Body)
 }
 
+func OpenPlayStoreApp(id string) {
+	fmt.Printf("Navigating Play Store to %s. Please install manually and press enter to continue when done.", id)
+	shellOutput, err := dev.RunShellCommand("pm install", remotePath)
+}
+
 // check checks the returned error of a function.
 func Check(f func() error) {
 	if err := f(); err != nil {
